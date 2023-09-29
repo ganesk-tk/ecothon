@@ -1,0 +1,70 @@
+# Import necessary libraries and modules
+
+# Define classes for game objects (e.g., characters, buildings, resources)
+class Character:
+    def __init__(self, name, health, energy):
+        self.name = name
+        self.health = health
+        self.energy = energy
+
+class Building:
+    def __init__(self, name, capacity):
+        self.name = name
+        self.capacity = capacity
+
+class Resource:
+    def __init__(self, name, quantity):
+        self.name = name
+        self.quantity = quantity
+
+# Define the Eco Village class to manage the game
+class EcoVillage:
+    def __init__(self, name):
+        self.name = name
+        self.characters = []  # List to store character objects
+        self.buildings = []   # List to store building objects
+        self.resources = []   # List to store resource objects
+
+    def add_character(self, character):
+        # Add a character to the village
+        self.characters.append(character)
+
+    def add_building(self, building):
+        # Add a building to the village
+        self.buildings.append(building)
+
+    def add_resource(self, resource):
+        # Add a resource to the village
+        self.resources.append(resource)
+
+    def display_info(self):
+        # Display information about the village, characters, buildings, and resources
+        print(f"Welcome to {self.name} Eco Village!")
+        print("Characters:")
+        for character in self.characters:
+            print(f"Name: {character.name}, Health: {character.health}, Energy: {character.energy}")
+        print("\nBuildings:")
+        for building in self.buildings:
+            print(f"Name: {building.name}, Capacity: {building.capacity}")
+        print("\nResources:")
+        for resource in self.resources:
+            print(f"Name: {resource.name}, Quantity: {resource.quantity}")
+
+# Create an instance of the EcoVillage class
+village = EcoVillage("Green Valley")
+
+# Create character, building, and resource objects and add them to the village
+character1 = Character("John", 100, 80)
+character2 = Character("Alice", 95, 75)
+building1 = Building("Community Center", 50)
+resource1 = Resource("Wood", 1000)
+resource2 = Resource("Water", 500)
+
+village.add_character(character1)
+village.add_character(character2)
+village.add_building(building1)
+village.add_resource(resource1)
+village.add_resource(resource2)
+
+# Display information about the village
+village.display_info()
